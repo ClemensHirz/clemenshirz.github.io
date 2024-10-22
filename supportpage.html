@@ -12,13 +12,21 @@
             text-align: center;
             padding: 20px;
             background-color: #f4f4f4;
+            background-image: url("https://raw.githubusercontent.com/ClemensHirz/clemenshirz.github.io/main/RandaUgandaMap.png"); /* Link zu deinem GitHub-Bild */
+            background-size: cover;
+            background-position: center;
         }
-        h1 {
-            color: #333;
-        }
-        p {
-            font-size: 1.2em;
-            color: #666;
+        .background-blur {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("https://raw.githubusercontent.com/ClemensHirz/clemenshirz.github.io/main/RandaUgandaMap.png"); /* Link zu deinem GitHub-Bild */
+            background-size: cover;
+            background-position: center;
+            filter: blur(8px); /* Weichzeichnen */
+            z-index: 0; /* Hintergrund ganz nach hinten */
         }
         .container {
             background-color: white;
@@ -27,6 +35,15 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             max-width: 600px;
             margin: 50px auto;
+            position: relative;
+            z-index: 1; /* Container bleibt scharf */
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            font-size: 1.2em;
+            color: #666;
         }
         .button {
             display: inline-block;
@@ -42,17 +59,64 @@
         .button:hover {
             background-color: #0056b3;
         }
+        /* Styling für den Kontakt-Button */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 5px;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 16px;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown:hover .button {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
 
+    <!-- Hintergrund-Bild, das weichgezeichnet wird -->
+    <div class="background-blur"></div>
+
     <div class="container">
         <h1>Welcome to My Journey</h1>
-        <p>Thank you for visiting! If you’d like to support my journey, feel free to click the button below.</p>
+        <p>Thank you for visiting! If you’d like to support my journey, feel free to click one of the buttons below.</p>
 
-        <a href="https://www.paypal.com/YOUR-PAYPAL-LINK" class="button" target="_blank">Support via PayPal</a>
+        <!-- PayPal Button -->
+        <a href="https://paypal.me/GeldAnClemensSenden?country.x=DE&locale.x=de_DE" class="button" target="_blank">Support via PayPal</a>
+        <br><br>
+
+        <!-- Google Forms Button -->
+        <a href="https://forms.gle/1WEZTttHeACjAbxn6" class="button" target="_blank">Add an icon to the map</a>
+        <br><br>
+
+        <!-- Kontaktieren Button mit Dropdown -->
+        <div class="dropdown">
+            <button class="button">Contact me</button>
+            <div class="dropdown-content">
+                <a href="https://api.whatsapp.com/send?phone=+4917682905880&text=Hallo" target="_blank">Save WhatsApp Contact</a>
+                <a href="mailto:pannier.packing@gmx.de" target="_blank">Send an Email</a>
+            </div>
+        </div>
     </div>
 
 </body>
 </html>
-
