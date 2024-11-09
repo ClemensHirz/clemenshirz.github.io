@@ -46,8 +46,9 @@
             color: #666;
         }
         .button {
-            display: inline-flex;
-            align-items: center;
+            display: block; /* Button in eigener Zeile */
+            width: 100%; /* Volle Breite */
+            text-align: left; /* Text nach links */
             padding: 10px 20px;
             font-size: 18px;
             color: white;
@@ -56,7 +57,8 @@
             border-radius: 5px;
             text-decoration: none;
             cursor: pointer;
-            margin-bottom: 10px;
+            margin-bottom: 10px; /* Abstand zwischen Buttons */
+            box-sizing: border-box; /* Padding nicht zur Breite addieren */
         }
         .button img {
             width: 20px;
@@ -69,6 +71,7 @@
         .dropdown {
             position: relative;
             display: inline-block;
+            width: 100%;
         }
         .dropdown-content {
             display: none;
@@ -125,8 +128,8 @@
     <a href="https://clemenshirz.github.io/" class="close-button">&times;</a>
 
     <div class="container">
-        <h1>Welcome to My Journey</h1>
-        <p>Thank you for visiting! If you’d like to support my journey, feel free to click one of the buttons below.</p>
+        <h1>Vielen Dank für deine Unterstützung!</h1>
+        <p>Über die Buttons unten kannst du mich entweder finanziell unterstützen oder mir einen Reisetipp geben der dann auch auf der Karte erscheint! Wenn du mir etwas schreiben willst, dann tippe auf den Button "Contact me"! Vielen Dank und liebe Grüße aus Uganda, Clemens</p>
 
         <!-- Button with PayPal icon -->
         <a href="https://paypal.me/GeldAnClemensSenden?country.x=DE&locale.x=de_DE" class="button" target="_blank">
@@ -168,5 +171,4 @@
 
 </body>
 </html>
-
 
