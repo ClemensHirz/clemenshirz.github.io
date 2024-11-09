@@ -46,7 +46,8 @@
             color: #666;
         }
         .button {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
             padding: 10px 20px;
             font-size: 18px;
             color: white;
@@ -55,7 +56,12 @@
             border-radius: 5px;
             text-decoration: none;
             cursor: pointer;
-            margin-bottom: 10px; /* Abstand zwischen Buttons */
+            margin-bottom: 10px;
+        }
+        .button img {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px; /* Abstand zwischen Icon und Text */
         }
         .button:hover {
             background-color: #0056b3;
@@ -89,7 +95,6 @@
         .dropdown:hover .button {
             background-color: #0056b3;
         }
-        /* Schließen-Button Styling */
         .close-button {
             position: fixed;
             top: 20px;
@@ -123,15 +128,25 @@
         <h1>Welcome to My Journey</h1>
         <p>Thank you for visiting! If you’d like to support my journey, feel free to click one of the buttons below.</p>
 
-        <a href="https://paypal.me/GeldAnClemensSenden?country.x=DE&locale.x=de_DE" class="button" target="_blank">Support via PayPal</a>
-        
-        <!-- Button to copy phone number -->
-        <button class="button" onclick="copyPhoneNumber()">Support via Twint</button>
+        <!-- Button with PayPal icon -->
+        <a href="https://paypal.me/GeldAnClemensSenden?country.x=DE&locale.x=de_DE" class="button" target="_blank">
+            <img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" alt="PayPal">Support via PayPal
+        </a>
 
-        <a href="https://forms.gle/1WEZTttHeACjAbxn6" class="button" target="_blank">Add an icon to the map</a>
+        <!-- Button with Twint icon -->
+        <button class="button" onclick="copyPhoneNumber()">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Twint_logo.svg/1200px-Twint_logo.svg.png" alt="Twint">Support via Twint
+        </button>
+
+        <!-- Button with Google Forms icon -->
+        <a href="https://forms.gle/1WEZTttHeACjAbxn6" class="button" target="_blank">
+            <img src="https://ssl.gstatic.com/docs/forms/forms_logo_2020q4_48dp.png" alt="Google Forms">Add an icon to the map
+        </a>
 
         <div class="dropdown">
-            <button class="button">Contact me</button>
+            <button class="button">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">Contact me
+            </button>
             <div class="dropdown-content">
                 <a href="https://api.whatsapp.com/send?phone=+4917682905880&text=Hallo" target="_blank">Save WhatsApp Contact</a>
                 <a href="mailto:pannier.packing@gmx.de" target="_blank">Send an Email</a>
@@ -153,4 +168,5 @@
 
 </body>
 </html>
+
 
