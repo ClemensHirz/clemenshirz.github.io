@@ -119,6 +119,15 @@
         .close-button:hover {
             background-color: #999;
         }
+        .message {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            display: none; /* Initial versteckt */
+        }
     </style>
 </head>
 <body>
@@ -138,12 +147,12 @@
 
         <!-- Button with Twint icon -->
         <button class="button" onclick="copyPhoneNumber()">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Twint_logo.svg/1200px-Twint_logo.svg.png" alt="Twint">Support via Twint
+            <img src="https://raw.githubusercontent.com/ClemensHirz/ClemensHirz.github.io/main/Twint.png" alt="Twint">Support via Twint
         </button>
 
         <!-- Button with Google Forms icon -->
         <a href="https://forms.gle/1WEZTttHeACjAbxn6" class="button" target="_blank">
-            <img src="https://ssl.gstatic.com/docs/forms/forms_logo_2020q4_48dp.png" alt="Google Forms">Add an icon to the map
+            <img src="https://raw.githubusercontent.com/ClemensHirz/ClemensHirz.github.io/main/Stern_Icon.png" alt="Google Forms">Add an icon to the map
         </a>
 
         <div class="dropdown">
@@ -155,6 +164,9 @@
                 <a href="mailto:pannier.packing@gmx.de" target="_blank">Send an Email</a>
             </div>
         </div>
+
+        <!-- Message Div -->
+        <div id="copyMessage" class="message">Die Telefonnummer wurde in die Zwischenablage kopiert!</div>
     </div>
 
     <!-- Script to copy phone number -->
@@ -162,7 +174,14 @@
         function copyPhoneNumber() {
             const phoneNumber = "+4917682905880";
             navigator.clipboard.writeText(phoneNumber).then(function() {
-                alert("Die Telefonnummer wurde in die Zwischenablage kopiert: " + phoneNumber);
+                // Zeige die Erfolgsmeldung
+                var messageDiv = document.getElementById("copyMessage");
+                messageDiv.style.display = "block"; // Nachricht anzeigen
+
+                // Blende die Nachricht nach 3 Sekunden aus
+                setTimeout(function() {
+                    messageDiv.style.display = "none";
+                }, 3000);
             }, function(err) {
                 console.error("Fehler beim Kopieren der Telefonnummer: ", err);
             });
@@ -171,4 +190,5 @@
 
 </body>
 </html>
+
 
