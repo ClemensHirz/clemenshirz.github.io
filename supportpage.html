@@ -12,7 +12,7 @@
             text-align: center;
             padding: 20px;
             background-color: #f4f4f4;
-            background-image: url("https://raw.githubusercontent.com/ClemensHirz/clemenshirz.github.io/main/RandaUgandaMap.png"); /* Link zu deinem GitHub-Bild */
+            background-image: url("https://raw.githubusercontent.com/ClemensHirz/clemenshirz.github.io/main/RandaUgandaMap.png");
             background-size: cover;
             background-position: center;
         }
@@ -22,11 +22,11 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url("https://raw.githubusercontent.com/ClemensHirz/clemenshirz.github.io/main/RandaUgandaMap.png"); /* Link zu deinem GitHub-Bild */
+            background-image: url("https://raw.githubusercontent.com/ClemensHirz/clemenshirz.github.io/main/RandaUgandaMap.png");
             background-size: cover;
             background-position: center;
-            filter: blur(8px); /* Weichzeichnen */
-            z-index: 0; /* Hintergrund ganz nach hinten */
+            filter: blur(8px);
+            z-index: 0;
         }
         .container {
             background-color: white;
@@ -36,7 +36,7 @@
             max-width: 600px;
             margin: 50px auto;
             position: relative;
-            z-index: 1; /* Container bleibt scharf */
+            z-index: 1;
         }
         h1 {
             color: #333;
@@ -55,11 +55,11 @@
             border-radius: 5px;
             text-decoration: none;
             cursor: pointer;
+            margin-bottom: 10px; /* Abstand zwischen Buttons */
         }
         .button:hover {
             background-color: #0056b3;
         }
-        /* Styling für den Kontakt-Button */
         .dropdown {
             position: relative;
             display: inline-block;
@@ -89,9 +89,9 @@
         .dropdown:hover .button {
             background-color: #0056b3;
         }
-         /* Schließen-Button Styling */
+        /* Schließen-Button Styling */
         .close-button {
-            position: absolute;
+            position: fixed;
             top: 20px;
             right: 20px;
             width: 30px;
@@ -99,11 +99,14 @@
             background-color: #ccc;
             color: white;
             font-size: 20px;
+            font-weight: bold;
             border-radius: 50%;
             border: none;
             cursor: pointer;
             text-align: center;
             line-height: 30px;
+            text-decoration: none;
+            z-index: 2;
         }
         .close-button:hover {
             background-color: #999;
@@ -112,22 +115,21 @@
 </head>
 <body>
 
-    <!-- Hintergrund-Bild, das weichgezeichnet wird -->
     <div class="background-blur"></div>
+
+    <a href="https://clemenshirz.github.io/" class="close-button">&times;</a>
 
     <div class="container">
         <h1>Welcome to My Journey</h1>
         <p>Thank you for visiting! If you’d like to support my journey, feel free to click one of the buttons below.</p>
 
-        <!-- PayPal Button -->
         <a href="https://paypal.me/GeldAnClemensSenden?country.x=DE&locale.x=de_DE" class="button" target="_blank">Support via PayPal</a>
-        <br><br>
+        
+        <!-- Button to copy phone number -->
+        <button class="button" onclick="copyPhoneNumber()">Support via Twint</button>
 
-        <!-- Google Forms Button -->
         <a href="https://forms.gle/1WEZTttHeACjAbxn6" class="button" target="_blank">Add an icon to the map</a>
-        <br><br>
 
-        <!-- Kontaktieren Button mit Dropdown -->
         <div class="dropdown">
             <button class="button">Contact me</button>
             <div class="dropdown-content">
@@ -137,5 +139,18 @@
         </div>
     </div>
 
+    <!-- Script to copy phone number -->
+    <script>
+        function copyPhoneNumber() {
+            const phoneNumber = "+4917682905880";
+            navigator.clipboard.writeText(phoneNumber).then(function() {
+                alert("Die Telefonnummer wurde in die Zwischenablage kopiert: " + phoneNumber);
+            }, function(err) {
+                console.error("Fehler beim Kopieren der Telefonnummer: ", err);
+            });
+        }
+    </script>
+
 </body>
 </html>
+
